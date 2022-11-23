@@ -22,7 +22,7 @@ class LinesCollection:
         self.lines = lines
         self.kwargs = kwargs
     
-    def add_lined(self, lines):
+    def add_lines(self, lines):
         for line in lines:
             self.lines.append(line)
 
@@ -81,18 +81,4 @@ class Plot:
 
         plt.show()
 
-    def draw_scene(self, scene_num=1):
-        if scene_num-1 >= len(self.scenes):
-            return -1
-
-        plt.close()
-        ax = plt.axes()
-        scene = self.scenes[scene_num-1]
-        for collection in scene.points:
-            dev_x, dev_y = Plot.convert_points(collection)
-            ax.scatter(dev_x, dev_y, **collection.kwargs)
-        for collection in scene.lines:
-            ax.add_collection(collection.get_lines())
-        
-        plt.show()
 
