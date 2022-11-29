@@ -1,4 +1,6 @@
 # graphictool_temp
+[not completed yet]
+
 Simple tool to represent your geometric algorithms results
 
 ## Python pakages needed
